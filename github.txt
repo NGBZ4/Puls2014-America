@@ -1,0 +1,42 @@
+anteriormente cuando una persona subia archivos a la web
+
+archivos
+FTP ————> Hosting / public_html / index.php
+
+se pegaba la carpeta a un dominio y esto era su página web www.prueba.com
+
+====================================
+
+Github / SVN (subversion) / TFS / Mercurial
+
+Git: control de versiones
+
+Github: webapp que consolida el control de versiones.
+
+en ftp solo subes y no puedes trabajar con un archivo varias personas a la vez
+
+1.- la mejor red social para programadores.
+2.- web/apps.
+3.- es mucho mas fácil que git.
+====================================
+
+1.- Github es un repositorio de código que te permite tener el proyecto en github, descargarlo en tu computadora, realizar cambios y después realizar un push, esto significa que github consolida solo los cambios que hicimos con el archivo y ya queda actualizado.
+
+2.- De esta manera se pueden tener varias versiones del mismo código
+
+3.- Hace cambios delta. que esto significa que solo se hacen cambios, donde nosotros los hicimos, y no es necesario subir el archivo completo. (a esto se le conoce como base de datos atómica del código)
+
+4.- el paso anterior genera un historial, ósea que se pueden visualizar que cambios se hicieron por que persona y en que fecha, incluso el mas pequeño cambio, esto último es potencialmente útil cuando se quiere determinar el porque del posible fallos de una web app.
+
+5.-se pueden hacer ramas denominadas (branches) explica:
+se tiene una rama master donde esta el repositorio principal
+master (github.com) repositorio principal
+master (disco duro) repositorio local
+master (servidor.com) repositorio en producción
+
+una persona podría realizar una rama llamada experimento y después fusionarlos y de esta manera se produce un merch.
+
+master
+experimento(local)
+
+merche (experimento—- master)
