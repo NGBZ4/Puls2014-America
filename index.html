@@ -21,7 +21,9 @@
  			<!--hay 2 tipos de elementos, los inline y los block: textos, imagenes y videos los inline son aquellos que pueden ir
  			en la misma linea y que hacen parte del contenido, los block son cajas (como el div)-->
 
- 			<!--figure sirve para meter imagenes en HTML5, antes se hacia solo con un img pero no es gobernable por que quedaba volando y se tenia que meter en un DIV pero ahora en HTML5 se usa figure en lugar de DIV-->
+ 			<!--figure sirve para meter imagenes en HTML5, antes se hacia solo con un img pero no es gobernable por que quedaba volando y se tenia que meter en un DIV pero ahora en HTML5 se usa figure en lugar de DIV, cada sección tiene su
+ 			etiqueta aunque funcionan igual que div aunque eso no sig que div ya no se use se sigue usando pero solo cuando no
+ 			hay una cuestion semantica-->
 
  			<!-- una buena practica es colocar un identificador para luego aplicar diseño o controlarlo por código; importante no
  			repetir el id para identificar otro objeto-->
@@ -91,9 +93,9 @@
 
  				<h2 class="titulo_item"><a href="#">Título del Post </a></h2>
 
- 				<p class="autor_item">Por<a href="#">Jonathan Gil</a></p>
+ 				<div class="autor_item">Por<a href="#">Jonathan Gil</a></div>
 
- 				<p class="datos_item">
+ 				<div class="datos_item">
 
  				<a href="#" class="tag_item">Categoria</a>
 
@@ -105,19 +107,19 @@
 
  				<a class="guardar_item" href="#"></a>
 
- 				</p>
+ 				</div>
 
  				<!--Nota personal: notese que solo se agrego otra etiqueta <p> porque los elementos que queriamos introducir cam-
  				biaron de linea, en las instrucciones anteriores que se declararon dentro de un mismo <p> fue porque de acuerdo
- 				con el mockup todas estaban en la misma fila-->
+ 				con el mockup todas estaban en la misma fila (actualización lo correcto es usar divs, asi que cambiare a estos)-->
 
- 				<p class="votación">
+ 				<div class="votación">
 
  					<a class="up" href=""></a>
  					6096
  					<a class="down" href=""></a>
 
- 				</p>
+ 				</div>
 
  			</article>
 
