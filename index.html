@@ -1,16 +1,140 @@
-<!DOCTIPE html>
+<!DOCTIPE html>  <!--directiva de navegador que le dice al navegador que debe implementar HTML5, aunque para los navegadores no hay de versiones de HTML, ellos no entienden de diferentes versiones-->
 
-<html lang="es" >
 
-	<head>
+<!--lang="idioma" es una buena práctica para que google sepa inmediatamente en que idioma esta mi web-->
+ <html lang="es"> 
 
-		<meta charset="utf-8" />
-		<title>Puls 2014 </title>
+ 	<head>
 
-	</head>
+ 		<!--Meta charset sirve para  decirle al navegador cual será la codificación para los caracteres especiales -->
+ 		<meta charset="utf8" /> 
 
-	<body>
+ 		<title> Mi primera web app :D </title>
+ 		<link rel="stylesheet"  href="estilos.css ">
 
-	</body>
+ 	</head>
 
-</html>
+ 	<body>
+
+ 		<header> 
+
+ 			<!--hay 2 tipos de elementos, los inline y los block: textos, imagenes y videos los inline son aquellos que pueden ir
+ 			en la misma linea y que hacen parte del contenido, los block son cajas (como el div)-->
+
+ 			<!--figure sirve para meter imagenes en HTML5, antes se hacia solo con un img pero no es gobernable por que quedaba volando y se tenia que meter en un DIV pero ahora en HTML5 se usa figure en lugar de DIV-->
+
+ 			<!-- una buena practica es colocar un identificador para luego aplicar diseño o controlarlo por código; importante no
+ 			repetir el id para identificar otro objeto-->
+ 			<figure id="logo">   
+
+ 				<!-- el Atributo title de las imagenes, es el texto informativo que aparece sobre ellas cuando el usuario navega
+ 				en la página, y si la imagen no carga el mensaje de error se llama alt-->
+
+ 				<img title="este es el logo de la comunidad puls" alt="La imagen no cargo, sentimos los inconvenientes"
+ 				 src="logo.png"/>
+
+ 			</figure>
+
+ 			<h1> Puls 2014 comunidad de personas cool </h1>
+
+ 			<figure id="avatar">
+ 				<!--Para las fotos hay que utilizar .JPG y para los diseños con menos de 256 colores hay que usar .PNG--> 
+ 				<img title="este es el logo del usuario de puls" alt="La imagen no cargo, sentimos los inconvenientes" 
+ 				src="avatar.jpg"/>
+
+
+ 				<!-- figcaption se define como la etiqueta Asociada a la descripción de texto de una imagen--> 
+ 				<figcaption>
+
+ 					*
+
+ 				</figcaption> 
+
+ 			</figure>
+
+ 		</header>
+
+ 		<!--nav es la navegación de la página-->
+ 		<nav>
+
+ 			<!-- ul es para crear una lista desordenada y los elementos dentro de una lista desordenada seran especificados con un li -->
+ 			<ul>
+ 				<li><a href="#">Python</a></li>
+ 				<li><a href="#">HTML 5</a></li>
+ 				<li><a href="#">CSS3</a></li>
+ 				<li><a href="#">Django</a></li>
+ 				<li id="publicar_nav"><a href="#">Publicar</a></li>
+ 				
+ 			</ul>
+
+ 		</nav>
+
+ 		<!--section es para crear areas de contenidos-->
+ 		<section id="contenido">
+ 			<!-- etiqueta article es para la creación de contenidos -->
+
+ 			<!-- cuando se le quiere dar estilo a un mismo elemento que se repite varias veces, como el atributo id solo se debe
+ 			utilizar una vez, se utiliza class; en css para identoficar un id se usa #id y para una clase es .class-->
+ 			<article class="item">
+
+ 				<!--sin duda se notara que todas las clases terminan en _item, esto es solo una buena practica para que cuando
+ 				una persona este aplicando estilos en css recuerde que todo se derivó de la clase item, es como si dijeramos:
+ 				"estoy declarando que todos estos estilos forman parte del campo semantico article"-->
+ 				<figure class="imagen_item">
+
+ 					<img src="imagen.jpg"/>
+
+ 				</figure>
+
+ 				<!--se usa h2, h1 solo se debe utilizar 1 vez por página, como buena practica para el posicionamiento
+ 				en buscadores-->
+
+ 				<h2 class="titulo_item"><a href="#">Título del Post </a></h2>
+
+ 				<p class="autor_item">Por<a href="#">Jonathan Gil</a></p>
+
+ 				<p class="datos_item">
+
+ 				<a href="#" class="tag_item">Categoria</a>
+
+ 				<!--La etiqueta span se utiliza para colocarle diseño a texto que no posee valor semántico, cuando se le quiere
+ 				dar estilo a un texto pero no se quiere hacer nada mas, span es para abrazar texto y darle estilo -->
+ 				<span class="fecha_item">Hace <strong>5</strong> min</span>
+
+ 				<a class="comentarios_item" href="#">455</a>
+
+ 				<a class="guardar_item" href="#"></a>
+
+ 				</p>
+
+ 				<!--Nota personal: notese que solo se agrego otra etiqueta <p> porque los elementos que queriamos introducir cam-
+ 				biaron de linea, en las instrucciones anteriores que se declararon dentro de un mismo <p> fue porque de acuerdo
+ 				con el mockup todas estaban en la misma fila-->
+
+ 				<p class="votación">
+
+ 					<a class="up" href=""></a>
+ 					6096
+ 					<a class="down" href=""></a>
+
+ 				</p>
+
+ 			</article>
+
+ 		</section>
+
+
+ 		<footer>
+ 			<p><strong>Powered by Jtech</strong></p>
+ 			<p>Mejorando.la 2014</p>
+
+ 		</footer>
+
+ 
+ 	</body>
+
+ </html>
+ <!--index.html es por defecto el archivo primario que utilizan los buscadores para mostrar una página web.
+ Mobile first es una buena pratica, puesto que los sitios son popularmente mas visualizados en el móvil primero se debe pensar en
+ un diseño móvil y despues en uno de escritorio, incluso esto tambien ayuda porque se optimizan espacios y se concreta real-
+ mente que es lo que se desea mostrar y ser objetivos, en lugar de rellenar espacios con cosas innecesarias -->
