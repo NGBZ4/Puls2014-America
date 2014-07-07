@@ -9,12 +9,20 @@
  		<!--Meta charset sirve para  decirle al navegador cual será la codificación para los caracteres especiales -->
  		<meta charset="utf8" /> 
 
- 		<!--meta description es la información abajo de los links a las páginas que se muestran en los buscadores
+ 		<!--meta name="description" content="" es la información abajo de los links a las páginas que se muestran en los buscadores
  		la descripción debe contener 160 caracteres y deberia de haber uno por cada url(pagina(no sitio, sitio y pag es dif.))-->
- 		<meta description=" proyecto de la primera generación de diseño web online 2014 " />
+ 		<meta name= "description" content= "Proyecto de la primera generación de diseño web online 2014" />
  
  		<title> Mi primera web app :D </title>
- 		<link rel="stylesheet"  href="estilos.css "/>
+
+ 		<!--normalize.css sirve para estandarizar y lograr que todos los componentes de estilos del sitio se vean igual en
+ 		todos los navegadores, por cierto CSS = Cascade stylesheet (hojas de estilo en cascada)-->
+ 		<link rel="stylesheet"  href="normalize.css "/>
+
+ 		<!--despues de que normalizamos, creamos la hoja de estilo que aplicará el diseño gráfico, es muy importante el orden
+ 		en el que se encuentre por que es la prioridad que tomará el navegador para renderizar el estilo, por esta razón, la
+ 		nueva hoja de estilos va debajo de normalize.css-->
+ 		<link rel="stylesheet"  href="estilos.css"/>
 
  	</head>
 
@@ -114,13 +122,13 @@
  				con el mockup todas estaban en la misma fila (actualización lo correcto es usar divs, asi que cambiare a estos)
  				ya que la aunque ambos son cajas la etiqueta <p> al ser texto tiene margen superior e inferior por defecto.-->
 
- 				<div class="votación">
+ 				<div class="votacion">
 
- 					<a class="up" href=""></a>
+ 					<a class="up" href="">U</a>
  					6096
- 					<a class="down" href=""></a>
+ 					<a class="down" href="">D</a>
  					<a class="comentarios_item" href="#">455</a>
- 					<a class="guardar_item" href="#"></a>
+ 					<a class="guardar_item" href="#">X</a>
 
  				</div>
 

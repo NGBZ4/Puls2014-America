@@ -1,0 +1,305 @@
+/*para aplicar estilos podemos hacerlo de estas formas
+1.- podemos escribir la (etiqueta) + {contenido} y cerramos con (;)
+2.- podemos escribir un (#id) + {contenido} y cerramos con (;)
+3.- podemos escribir una (.class) + {contenido} y cerramos con (;)
+En css una buena practica es empezar diseñando de los aspectos mas generales a los mas específicos, de ahi su nombre: estilos
+en casdada, porque avanzan de grande a pequeño (general a específico)
+
+NOTA IMPORTANTE: position fixed. es para que sin importar cuando se haga scroll el objeto siempre aparezca en pantalla*/
+
+/*se le esta aplicando estilo a los enlaces, o la etiqueta <a href=""></a> */
+a
+{
+	color: #22BCE0;
+}
+
+body
+{
+	background: #EEEEEE;
+
+	/*si se van a declarar fuentes si son fuentes de una sola palabra como: arial no es necesario comillas pero con fuentes de
+	multiples palabras, se declaran con comillas: "Times New Roman" */
+	font-family: "Arial";
+
+	/*en el caso de tamaño de letra segun estudios cientificos especializados el tamaño correcto que se ve bien desde móviles
+	hasta ordenadores, es 16px como mínimo, quizá haya ocaciones en los que se requiera mas grande o mas pequeño sin embargo 
+	son ocaciones especiales*/
+	font-size: 16px;
+}
+
+footer
+{
+	/*rgba se puede aplicar donde nosotros queramos, en este caso como se quiere tener el texto blanco con una opacidad
+	del 70% lo utilizaremos*/
+	color: rgba(255,255,255,0.7);
+	background: #22BCE0;
+	text-align: center;
+	padding: 1em;
+}
+
+header
+{
+	background: #343b54;
+	color: white;
+
+	/*esta técnica se usa cuando los objetos se salen de la caja que los contiene por ponerlos a flotar*/
+	overflow: hidden;
+
+	/*padding = margen interno de la caja
+  margin = margen externo de la caja, em es una medida relativa 1 em equivale a la fuente principal que en este caso son
+  16px; esto es util por que si la fuente principal se cambia lo demas es auto ajustable*/
+	padding: 0.5em;
+}
+
+/*esto significa que todas las etiquetas figure que estan dentro de header, se pondran a flotar a la izquierda*/
+header figure
+{
+	float: left;
+}
+
+header h1
+{
+	
+	/*como solo hay un solo h1 que esta en el header, la declaración anterior significa: el h1 que esta dentro del header
+	tendra las siguientes características, font-weight es para quitar o poner negritas*/
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0.2em 70px 0 0;
+
+}
+
+
+/*esto lo que significa: etiqueta img que tiene un id logo, que esta dentro del header*/
+header #logo img
+{
+
+	/*cuando solo se introduce el ancho, el navegador recalcula el alto proporcionalmente.
+	las imagenes que son contenido van en html y las que son diseño van en css*/
+	width: 52px;
+	border-right: 1px solid white;
+	padding-right: 0.5em;
+	margin-right: 0.5em;
+
+}
+
+header #avatar
+{
+	margin: 0.5em 0.5em 0 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+header #avatar img
+{
+	width: 52px;
+	height: 52px;
+
+	/*de esta forma se hacen los bordes redondeados se puede aplicar % o px */
+	border-radius: 50%;
+
+}
+
+/*cuando un <ul> es el primer elemento de una caja y esta no tiene padding, el paddin interno del primer elemento
+se sale como si fuera margin (es una cosa muy tonta) esto se debe a que <ul> tiene margenes por defecto, y hay que 
+remediarlo eliminando el paddin y el margin del ul */
+nav
+{
+	background: #80BCA3;
+
+	/*aplicando estilo de sombra a la caja del nav*/
+	box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
+
+	/*para darle un espacio al nav se le aplica un padding superior e inferior siguiendo las manecillas del reloj
+	0 0 0 0 arri, der, abaj, izq. pero tambien se pueden colocar 2 numeros: 1em 0; esto sig arri-abaj e izq-der */
+	padding: 0 0.5em;
+	position: relative;
+}
+
+nav ul
+{
+	/*esto sirve para quitar los puntos laterales a la lista desordenada*/
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/*de esta forma se le dio una posicion deseada al boton publicar*/
+nav ul #publicar_nav
+{
+	position: absolute;
+
+	/*truco para hacer que suba en el plano cartesiano el boton*/
+	top: -0.3em;
+	right: 0;
+}
+
+/*ahora se especifica el color del boton publicar*/
+nav ul #publicar_nav a
+{
+	background: #22BCE0;
+	padding: 0.8em 0.5em;
+	box-shadow: rgba(0,0,0,0.5) 5px 5px 15px;
+
+	/*de esta forma quitamos el subrayado del texto, o agregamos (según el caso)*/
+	text-decoration: none;
+	border-radius: 0.2em;
+
+	/*de esta forma agregamos el estilo de letra que en este caso, es cursiva*/
+	font-style: italic;
+
+	/*Para aplicar sombras a los textos se requiere entender las partes que componen su declaración: el primer valor
+	es un tipo de color rgba(0,0,0,0.5) donde r=red, g=green, b=lue, a=alfa(transparencia) los 
+	primeros 3 números van de 0 a 255 y el ultimo va de 0 a 1 donde 1 es completamente opaco y 0 es completamente
+	transparente, en el caso de (0,0,0,0.5) se esta delcarando un alfa del 50%;
+	En el caso de 2px 2px 5px: el primer valor es el movimiento de la sombra en el eje (x), el segundo en el eje (y) y
+	el tercero es la difuminación, si se le coloca 0px la sombra seria dura, conforme va aumentando se va difuminando
+	hasta quedar completamente transparente
+	NOTA!: para aplicar el estilo a una caja es lo mismo solo se cambia el text-shadow por el box-shadow*/
+	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+}
+
+nav ul li
+{
+	/*los <li> son por defecto cajas inline por esta razón aparecen una debajo de otra, asi que aplicando el inline-block
+	logramos ponerlas una a lado de la otra*/
+	display: inline-block;
+
+	/*se le aplica un margen derecho para separar un poco los enlaces del nav*/
+	margin: 0 1em 0 0;
+}
+
+/*en este caso se le esta aplicando color de texto blanco a los enlaces que estan dentro de un (list item) dentro de una
+(unorder list) dentro de la etiqueta de nav*/
+nav ul li a
+{
+	color: white;
+
+	/*para poder colocar un padding a las etiquetas <a> se le coloca display block porque solo las cajas tienen margin
+	y padding; al colocar el padding aqui la etiqueta clickeable se hace mas grande*/
+	display: block;
+	padding: 0.5em 0;
+	text-decoration: none;
+}
+
+
+/*para hacer que los parrafos del footer queden pegados como requiere el diseño se utilizaran pseudoclases*/
+footer p:first-child
+{
+	margin-bottom: 0;
+}
+footer p:last-child
+{
+	margin-top: 0;
+}
+
+/*continuando con las técnicas avanzadas, a travéz de esta podemos encadenar pseudo elementos, uno detras de otros con el
+after y el before cuando hay mas elementos y quieres acceder se usa nth-child*/
+
+footer p:last-child:before
+{
+	content: "- ";
+}
+footer p:last-child:after
+{
+	content: " -";
+}
+
+/*despues de las etiquetas pasaremos a darle estilo al cuerpo*/
+#contenido
+{
+	margin: 1em;
+}
+
+#contenido .item
+{
+	background: white;
+	border-bottom: 3px solid #22BCE0;
+	margin-bottom: 2.5em;
+	min-height: 128px;
+	position: relative;
+}
+
+/*aplicando estilos al autor que es solo lo que esta dentro del div, ya que el <a> esta en el color designado a los enlaces*/
+#contenido .item .autor_item
+{
+	color: #AAA;
+}
+
+/*se le aplican estilos a los datos, se alinean a la derecha para posteriormente hacer flotar la etiqueta*/
+#contenido .item .datos_item
+{
+	margin: 1em 1em 0 0;
+	text-align: right;
+}
+#contenido .item .datos_item .fecha_item
+{
+	color: #AAA;
+}
+#contenido .item .datos_item .tag_item
+{
+	background: #F4502A;
+	border-radius: 0.5em;
+	color: white;
+	float: left;
+	padding: 0.2em 0.5em;
+	text-decoration: none;
+}
+
+/*se le aplican estilos a la imagen*/
+#contenido .item .imagen_item
+{
+	float: left;
+	margin: 0 1em 0 0;
+}
+
+#contenido .item .imagen_item img
+{
+	width: 96px;
+}
+
+/*aplicando estilos al título NOTA: en el caso del color al título, el maestro menciona que el color va en la etiqueta <a>*/
+#contenido .item .titulo_item
+{
+	font-size: 1.2em;
+	font-style: italic;
+	padding: 0.5em 0.5em 0 0;
+}
+#contenido .item .titulo_item a
+{
+	color: #444;
+	text-decoration: none;
+}
+
+/*aplicando estilos a la votación*/
+#contenido .item .votacion
+{
+	background: white;
+	/*para colocar bordes redondeados solo a ciertas áreas, es igual que un margen, ejemplo border radius: 0 1 2 3 
+	donde 0 es la esquina superior izq, 1 es la esq superior der, 2 esq inferior der y 3 la esq inferior izq*/
+	border-radius: 0 0 0.5em 0.5em;
+	left: 5%;
+	margin-top: 3px;
+	padding: 0.2em;
+	position: absolute;
+	/*tecnica para sacar una caja a la parte inferior de otra caja, una vez delcarada la posicion absolute*/
+	top: 100%;
+	/*para asemejarse al diseño estableceremos un ancho del 90% y para centrarlo, utilizamos un left al 5%*/
+	width: 90%;
+}
+/*para terminar el diseño básico de la aplicación se debe poner a flotar el comentarios item y guardar item, utilizando 
+herencia en css, y esto se utiliza cuando se separan los atributos por una coma (,)*/
+#contenido .item .votacion .comentarios_item,
+#contenido .item .votacion .guardar_item
+{
+	float: right;
+}
+
+/*concepto de caja: inline, block, inline-bock y p
+block: todos los textos saltan abajo del objeto, se le pueden aplicar margenes laterales e inferiores
+inline: el texto se mezcla con el objeto, aunque se debe hacer flotar la caja, pero no posee margenes 
+inline - block: el objeto puede tener margenes pero cosas alado de ellos (apunte para figura explicativa)
+
+Como codificar en css: primero etiquetas en orden alfabético seguida de ids y clases de igual forma en orden alfabético*
+
+Hacer mockups en libreta lo mas sencillo posible, pero para hacerlo online esta balsamic mockups/
