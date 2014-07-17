@@ -64,10 +64,14 @@ header h1
 	tendra las siguientes características, font-weight es para quitar o poner negritas*/
 	font-size: 1.2em;
 	font-weight: normal;
-	margin: 0.2em 70px 0 0;
+	margin: 0.2em 70px 0.2em 0;
 
 }
 
+header #header_item
+{
+	color: #22BCE0;
+}
 
 /*esto lo que significa: etiqueta img que tiene un id logo, que esta dentro del header*/
 header #logo img
