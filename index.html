@@ -12,8 +12,18 @@
  		<!--meta name="description" content="" es la información abajo de los links a las páginas que se muestran en los buscadores
  		la descripción debe contener 160 caracteres y deberia de haber uno por cada url(pagina(no sitio, sitio y pag es dif.))-->
  		<meta name= "description" content= "Proyecto de la primera generación de diseño web online 2014" />
+
+ 		<!--Meta viewport es un meta que nos va a permitir controlar el área visible del navegador con sus respectivas
+ 		propiedades; por ejemplo el atributo content=" width=device width indica que la parte visible sea igual al ancho de mi
+ 		dispositivo" el atributo minimum-scale="" y maximun-scale="" es para controlar el zoom que queremos que 
+ 		la persona utilice, y en este caso con el valor 1, indicamos que sera del 100% fijo -->
+ 		<meta name="viewport" content="width=device-width, minimum-scale= 1, maximun-scale= 1" />
  
  		<title> Mi primera web app :D </title>
+
+ 		<!--por medio de este link estamos pidiendo que google fonts nos provea la fuente open sans 400(normal) 700(bold)
+ 		se pone en primer lugar este link porque queremos que la fuente se cargue primero-->
+ 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
  		<!--normalize.css sirve para estandarizar y lograr que todos los componentes de estilos del sitio se vean igual en
  		todos los navegadores, por cierto CSS = Cascade stylesheet (hojas de estilo en cascada)-->
@@ -78,8 +88,9 @@
  				<li><a href="#">Python</a></li>
  				<li><a href="#">HTML 5</a></li>
  				<li><a href="#">CSS3</a></li>
+ 				<li><a href="#">JavaScript</a></li>
  				<li><a href="#">Django</a></li>
- 				<li id="publicar_nav"><a href="#">Publicar</a></li>
+ 				<li id="publicar_nav"><a href="#" class="icon-publicar">Publicar</a></li>
  				
  			</ul>
 
@@ -126,15 +137,112 @@
 
  				<div class="votacion">
 
- 					<a class="up" href="">U</a>
+ 					<!--un elemento puede tener mas de una clase, para esto se coloca un espacio y así en el caso de up y
+ 					icon-gusta afectarán a la etiqueta <a>-->
+ 					<a class="up icon-gusta" href=""></a>
  					6096
- 					<a class="down" href="">D</a>
+ 					<a class="down icon-nogusta" href=""></a>
  					<a class="comentarios_item" href="#">455</a>
- 					<a class="guardar_item" href="#">X</a>
+ 					<a class="guardar_item icon-guardar" href="#"></a>
 
  				</div>
 
  			</article>
+
+ 			<article class="item">
+
+ 				<!--sin duda se notara que todas las clases terminan en _item, esto es solo una buena practica para que cuando
+ 				una persona este aplicando estilos en css recuerde que todo se derivó de la clase item, es como si dijeramos:
+ 				"estoy declarando que todos estos estilos forman parte del campo semantico article"-->
+ 				<figure class="imagen_item">
+
+ 					<img src="imagen.jpg"/>
+
+ 				</figure>
+
+ 				<!--se usa h2, h1 solo se debe utilizar 1 vez por página, como buena practica para el posicionamiento
+ 				en buscadores-->
+
+ 				<h2 class="titulo_item"><a href="#">Título del Post </a></h2>
+
+ 				<div class="autor_item">Por<a href="#">Jonathan Gil</a></div>
+
+ 				<div class="datos_item">
+
+ 				<a href="#" class="tag_item">Categoria</a>
+
+ 				<!--La etiqueta span se utiliza para colocarle diseño a texto que no posee valor semántico, cuando se le quiere
+ 				dar estilo a un texto pero no se quiere hacer nada mas, span es para abrazar texto y darle estilo -->
+ 				<span class="fecha_item">Hace <strong>5</strong> min</span>
+
+ 				</div>
+
+ 				<!--Nota personal: notese que solo se agrego otra etiqueta <p> porque los elementos que queriamos introducir cam-
+ 				biaron de linea, en las instrucciones anteriores que se declararon dentro de un mismo <p> fue porque de acuerdo
+ 				con el mockup todas estaban en la misma fila (actualización lo correcto es usar divs, asi que cambiare a estos)
+ 				ya que la aunque ambos son cajas la etiqueta <p> al ser texto tiene margen superior e inferior por defecto.-->
+
+ 				<div class="votacion">
+
+ 					<!--un elemento puede tener mas de una clase, para esto se coloca un espacio y así en el caso de up y
+ 					icon-gusta afectarán a la etiqueta <a>-->
+ 					<a class="up icon-gusta" href=""></a>
+ 					6096
+ 					<a class="down icon-nogusta" href=""></a>
+ 					<a class="comentarios_item" href="#">455</a>
+ 					<a class="guardar_item icon-guardar" href="#"></a>
+
+ 				</div>
+
+ 			</article>
+
+ 			<article class="item">
+
+ 				<!--sin duda se notara que todas las clases terminan en _item, esto es solo una buena practica para que cuando
+ 				una persona este aplicando estilos en css recuerde que todo se derivó de la clase item, es como si dijeramos:
+ 				"estoy declarando que todos estos estilos forman parte del campo semantico article"-->
+ 				<figure class="imagen_item">
+
+ 					<img src="imagen.jpg"/>
+
+ 				</figure>
+
+ 				<!--se usa h2, h1 solo se debe utilizar 1 vez por página, como buena practica para el posicionamiento
+ 				en buscadores-->
+
+ 				<h2 class="titulo_item"><a href="#">Título del Post </a></h2>
+
+ 				<div class="autor_item">Por<a href="#">Jonathan Gil</a></div>
+
+ 				<div class="datos_item">
+
+ 				<a href="#" class="tag_item">Categoria</a>
+
+ 				<!--La etiqueta span se utiliza para colocarle diseño a texto que no posee valor semántico, cuando se le quiere
+ 				dar estilo a un texto pero no se quiere hacer nada mas, span es para abrazar texto y darle estilo -->
+ 				<span class="fecha_item">Hace <strong>5</strong> min</span>
+
+ 				</div>
+
+ 				<!--Nota personal: notese que solo se agrego otra etiqueta <p> porque los elementos que queriamos introducir cam-
+ 				biaron de linea, en las instrucciones anteriores que se declararon dentro de un mismo <p> fue porque de acuerdo
+ 				con el mockup todas estaban en la misma fila (actualización lo correcto es usar divs, asi que cambiare a estos)
+ 				ya que la aunque ambos son cajas la etiqueta <p> al ser texto tiene margen superior e inferior por defecto.-->
+
+ 				<div class="votacion">
+
+ 					<!--un elemento puede tener mas de una clase, para esto se coloca un espacio y así en el caso de up y
+ 					icon-gusta afectarán a la etiqueta <a>-->
+ 					<a class="up icon-gusta" href=""></a>
+ 					6096
+ 					<a class="down icon-nogusta" href=""></a>
+ 					<a class="comentarios_item" href="#">455</a>
+ 					<a class="guardar_item icon-guardar" href="#"></a>
+
+ 				</div>
+
+ 			</article>
+
 
  		</section>
 
@@ -152,4 +260,6 @@
  <!--index.html es por defecto el archivo primario que utilizan los buscadores para mostrar una página web.
  Mobile first es una buena pratica, puesto que los sitios son popularmente mas visualizados en el móvil primero se debe pensar en
  un diseño móvil y despues en uno de escritorio, incluso esto tambien ayuda porque se optimizan espacios y se concreta real-
- mente que es lo que se desea mostrar y ser objetivos, en lugar de rellenar espacios con cosas innecesarias -->
+ mente que es lo que se desea mostrar y ser objetivos, en lugar de rellenar espacios con cosas innecesarias 
+
+ Para reemplazar multiples lineas de código con cmd+d se seleccionan los similares y así se cambia todo de una sola vez-->

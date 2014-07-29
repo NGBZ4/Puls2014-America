@@ -8,6 +8,83 @@ en casdada, porque avanzan de grande a pequeño (general a específico)
 NOTA IMPORTANTE: position fixed. es para que sin importar cuando se haga scroll el objeto siempre aparezca en pantalla*/
 
 /*se le esta aplicando estilo a los enlaces, o la etiqueta <a href=""></a> */
+
+
+/*código de declaración de css para importar la fuente que tenemos en local, es preciso que se use el nombre que se delcara en
+font family. 
+las diferentes declaraciones son por la siguiente explicación:
+se escogerá la mejor opción dependiendo del navegador
+el archivo .eot es para los internet exlorer 6 7 8 
+el archivo .eot con hastag iefix es para los Iexplorer viejos como el 6
+el archivo .woff es para los navegadores modernos como el safari el crome etc
+el archivo .ttf es para los safari viejos
+el archivo .svg es para dispositivos como el iphone y el ipad que son los unicos que lo
+es importante que se modifique la ruta o no funcionará, sin embargo se usará el ejemplo práctico y se dejará como
+comentariio este código.
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fuentes/OpenSans-Regular-webfont.eot');
+    src: url('fuentes/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fuentes/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    		}  
+
+ siempre es una buena practica que cuando se tienen fuentes estas se declaren por encima del documento*/
+
+ 
+@font-face {
+	font-family: 'icomoon';
+	src:url('fuentes/icomoon.eot?-ep69hd');
+	src:url('fuentes/icomoon.eot?#iefix-ep69hd') format('embedded-opentype'),
+		url('fuentes/icomoon.woff?-ep69hd') format('woff'),
+		url('fuentes/icomoon.ttf?-ep69hd') format('truetype'),
+		url('fuentes/icomoon.svg?-ep69hd#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gusta:before {
+	content: "\e600";
+	color: green ;
+}
+.icon-nogusta:before {
+	content: "\e601";
+	color: red ;
+}
+.icon-publicar:after {
+	content: "\e602";
+	margin-left: 0.5em;
+}
+.icon-guardar:before {
+	content: "\f005";
+	color: gold ;
+
+	/*para alinear elementos utilizamos el margin y en este caso aposición relative*/
+	margin-right: 0.5em;
+	position: relative;
+	top: 0.2em;
+
+}
+
+
 a
 {
 	color: #22BCE0;
@@ -19,7 +96,7 @@ body
 
 	/*si se van a declarar fuentes si son fuentes de una sola palabra como: arial no es necesario comillas pero con fuentes de
 	multiples palabras, se declaran con comillas: "Times New Roman" */
-	font-family: "Arial";
+	font-family: "open sans";
 
 	/*en el caso de tamaño de letra segun estudios cientificos especializados el tamaño correcto que se ve bien desde móviles
 	hasta ordenadores, es 16px como mínimo, quizá haya ocaciones en los que se requiera mas grande o mas pequeño sin embargo 
@@ -109,15 +186,16 @@ se sale como si fuera margin (es una cosa muy tonta) esto se debe a que <ul> tie
 remediarlo eliminando el paddin y el margin del ul */
 nav
 {
-	background: #80BCA3;
+	background: #968F5F; /*el color anterior era #7488CD*/
 
 	/*aplicando estilo de sombra a la caja del nav*/
 	box-shadow: rgba(0,0,0,0.5) 0px 0px 5px;
 
 	/*para darle un espacio al nav se le aplica un padding superior e inferior siguiendo las manecillas del reloj
 	0 0 0 0 arri, der, abaj, izq. pero tambien se pueden colocar 2 numeros: 1em 0; esto sig arri-abaj e izq-der */
-	padding: 0 0.5em;
+	padding: 0 6.5em 0 0.5em;
 	position: relative;
+
 }
 
 nav ul
@@ -134,7 +212,7 @@ nav ul #publicar_nav
 	position: absolute;
 
 	/*truco para hacer que suba en el plano cartesiano el boton*/
-	top: -0.3em;
+	top: -0.2em;
 	right: 0;
 }
 
@@ -142,7 +220,7 @@ nav ul #publicar_nav
 nav ul #publicar_nav a
 {
 	background: #22BCE0;
-	padding: 0.8em 0.5em;
+	padding: 0.9em 0.7em;
 	box-shadow: rgba(0,0,0,0.5) 5px 5px 15px;
 
 	/*de esta forma quitamos el subrayado del texto, o agregamos (según el caso)*/
@@ -291,6 +369,12 @@ footer p:last-child:after
 	/*para asemejarse al diseño estableceremos un ancho del 90% y para centrarlo, utilizamos un left al 5%*/
 	width: 90%;
 }
+
+#contenido .item .votacion a
+{
+	text-decoration: none;
+}
+
 /*para terminar el diseño básico de la aplicación se debe poner a flotar el comentarios item y guardar item, utilizando 
 herencia en css, y esto se utiliza cuando se separan los atributos por una coma (,)*/
 #contenido .item .votacion .comentarios_item,
@@ -307,3 +391,44 @@ inline - block: el objeto puede tener margenes pero cosas alado de ellos (apunte
 Como codificar en css: primero etiquetas en orden alfabético seguida de ids y clases de igual forma en orden alfabético*
 
 Hacer mockups en libreta lo mas sencillo posible, pero para hacerlo online esta balsamic mockups/
+
+
+
+
+
+
+/*uso de media queries para el diseño responsive declarando @media + aquien va a afectar por ejemplo en este caso screen
+y and () NOTA: and () debe tener espacio para los paréntesis o no funciona;
+dentro de los paréntesis se escribe el valor que va a regir el cambio como min width
+
+@media print {} sirve para modificar el estilo del sitio cuando se quiere imprimir
+
+NOTA PERSONAL: por alguna razon si despues del media quierie, quiero abrir los corchetes en la siguiente linea, como con las 
+anteriores instrucciones, no funciona, pero si lo abro en la misma linea si funciona (uno se puede dar cuenta por el cambio
+de color); además las equitetas y todos los valores a pesar de estar dentro de los corchetes del media quierie, se abren y 
+se cierran como normalmente se hace.*/
+@media screen and (min-width: 800px){
+	
+	#contenido
+	{
+		overflow: hidden;
+	}
+
+	#contenido .item
+	{
+		float: left;
+		width: 49%;		
+	}
+
+	/*Se necesita que exista un margen entre los articulos y para esto se usan pseudo elementos por ejemplo la linea de abajo
+	quiere decir que se van a seleccionar los elementos impares, y solo a estos se le aplicarán los atributos*/
+	#contenido .item:nth-child(odd)
+	{
+		margin-right: 2%;
+	}
+
+}
+
+
+
+
